@@ -23,8 +23,13 @@ def find_valid_calls(planeteer_calls)
   # Use an Enumerable to check if any elements in the passed in array match the valid calls listed above 
   # Return the first valid call found, or return nil if no valid calls are found
   count = 0
+  ans = nil
   while planeteer_calls.length > count do
-    valid_calls.include? x ? return x : return nil
+    if valid_calls.include? planeteer_calls[count]
+      ans = planeteer_calls[count]
+      return ans
+    end
     count += 1
   end
+  ans
 end
